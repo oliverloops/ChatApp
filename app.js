@@ -1,13 +1,20 @@
+'use strict';
+
 const express = require('express');
+const hbs = require('hbs');
 const app = express();
 const port = 3000 || process.env.PORT;
 
-const server = app.listen(port, () => console.log(`Running on port: ${port}`));
+const server = app.listen(port, () => console.log(`Running on port: ${port} :^D`));
 const io = require('socket.io')(server);
 
-// app.use(express.static(__dirname + '/'));
+app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + '/views');
+
+app.use(express.static(__dirname + '/public'));
+
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
+    res.render('./index');
 });
 
 //Initial Console Output
