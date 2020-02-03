@@ -8,7 +8,7 @@ function starter(){
       return false;
     });
     
-    socket.on('connect', (name) => {
+    socket.on('connect', () => {
       let name = prompt("Enter your user name: ");
       const li = document.createElement('li');
       const textnode = document.createTextNode(`${name} is connected`);
