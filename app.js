@@ -1,7 +1,8 @@
 'use strict';
 
-const express = require('express');
-const hbs = require('hbs');
+const express = require('express'),
+      hbs = require('hbs');
+
 const app = express();
 const port = 3000 || process.env.PORT;
 
